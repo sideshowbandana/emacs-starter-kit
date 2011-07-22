@@ -99,6 +99,8 @@ exec-to-string command, but it works and seems fast"
 
 ;; TODO: set up ri
 ;; TODO: electric
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
 (provide 'starter-kit-ruby)
 ;; starter-kit-ruby.el ends here

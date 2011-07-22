@@ -54,16 +54,15 @@
 
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
-(require 'starter-kit-misc)
 (require 'starter-kit-registers)
 (require 'starter-kit-eshell)
 (require 'starter-kit-lisp)
 (require 'starter-kit-perl)
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
+(require 'starter-kit-misc)
 
 (regen-autoloads)
-(load custom-file 'noerror)
 
 ;; You can keep system- or user-specific customizations here
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
@@ -75,5 +74,9 @@
 (if (file-exists-p user-specific-dir)
   (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 (if (file-exists-p user-specific-config) (load user-specific-config))
+
+(load custom-file 'noerror)
+
+
 
 ;;; init.el ends here
